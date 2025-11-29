@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
     
     printf("Monitoring on %s... Press Ctrl+C to stop.\n", dev);
     // 패킷 캡처 루프 시작 (무한 루프)
-    pcap_loop(handle, 0, packet_handler, NULL);
+    pcap_loop(handle, 0, packet_handler, NULL); //인자에 2번째가 0 또는 -1이면 무한 정수가 들어가면 해당 횟수만큼 반복
     
     pcap_close(handle);
     close_all_files();
